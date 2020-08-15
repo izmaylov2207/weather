@@ -23,6 +23,12 @@ class ForecastWeatherService implements ForecastWeatherServiceInterface
     /** @var Client http request client */
     private Client $client;
 
+    /**
+     * ForecastWeatherService constructor.
+     * @param string $apiKey
+     * @param string $lang
+     * @param Client $client
+     */
     public function __construct(string $apiKey, string $lang, Client $client)
     {
         if (empty($apiKey) || empty($lang)) {

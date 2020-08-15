@@ -14,6 +14,10 @@ class WeatherDataExporterFactory
     /** @var ContainerInterface */
     private ContainerInterface $container;
 
+    /**
+     * WeatherDataExporterFactory constructor.
+     * @param ContainerInterface $container
+     */
     public function __construct(ContainerInterface $container)
     {
         $this->container = $container;

@@ -13,6 +13,11 @@ class AbstractWeatherDataExporter
     /** @var string - path to directory */
     protected string $directory;
 
+    /**
+     * AbstractWeatherDataExporter constructor.
+     * @param array $template
+     * @param string $directory
+     */
     public function __construct(array $template, string $directory)
     {
         $this->template = $template;

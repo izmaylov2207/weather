@@ -11,6 +11,9 @@ class Kernel extends BaseKernel
 {
     use MicroKernelTrait;
 
+    /**
+     * @inheritDoc
+     */
     protected function configureContainer(ContainerConfigurator $container)
     {
         $container->import(ROOT_DIR . '/config/framework.yaml');
@@ -18,6 +21,9 @@ class Kernel extends BaseKernel
         $container->import(ROOT_DIR . '/config/services.yaml');
     }
 
+    /**
+     * @inheritDoc
+     */
     protected function configureRoutes(RoutingConfigurator $routes)
     {
         $routes->import(ROOT_DIR . '/config/routes.yaml');

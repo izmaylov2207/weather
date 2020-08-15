@@ -16,6 +16,13 @@ class WeatherDataDto
     /** @var string current wind direction */
     public string $windDirection;
 
+    /**
+     * WeatherDataDto constructor.
+     * @param string $date
+     * @param string $temperature
+     * @param string $windSpeed
+     * @param string $windDirection
+     */
     public function __construct(string $date, string $temperature, string $windSpeed, string $windDirection)
     {
         $this->date = $date;

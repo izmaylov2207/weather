@@ -13,6 +13,10 @@ class ExtensionValueObject
     /** @var string current value */
     private string $extension;
 
+    /**
+     * ExtensionValueObject constructor.
+     * @param string $extension
+     */
     public function __construct(string $extension)
     {
         $this->extension = $extension;

@@ -19,6 +19,12 @@ class CreateWeatherFileCommand
     /** @var ForecastWeatherServiceInterface */
     private ForecastWeatherServiceInterface $forecastWeatherService;
 
+    /**
+     * CreateWeatherFileCommand constructor.
+     * @param ContainerInterface $container
+     * @param WeatherDataExporterFactory $weatherDataExporterFactory
+     * @param ForecastWeatherServiceInterface $forecastWeatherService
+     */
     public function __construct(
         ContainerInterface $container,
         WeatherDataExporterFactory $weatherDataExporterFactory,
@@ -31,8 +37,9 @@ class CreateWeatherFileCommand
 
     /**
      * @param string $extension
+     * @return string
      */
-    public function execute(string $extension)
+    public function execute(string $extension): string
     {
         $extensionVo = new ExtensionValueObject($extension);
 
@@ -41,8 +48,8 @@ class CreateWeatherFileCommand
         }
 
         $weatherData = $this->forecastWeatherService->getWeatherData(
-            $this->container->hasParameter('current_city_lat'),
-            $this->container->hasParameter('current_city_lag')
+            $this->container->getParameter('current_city_lat'),
+            $this->container->getParameter('current_city_log')
         );
 
         $exporter = $this->weatherDataExporterFactory->create($extensionVo);
