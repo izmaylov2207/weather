@@ -15,7 +15,7 @@ class WeatherController extends AbstractController
      */
     public function getWeatherAction(string $extension, CreateWeatherFileCommand $createWeatherFileCommand)
     {
-        $createWeatherFileCommand->execute($extension);
-        return new Response($createWeatherFileCommand->execute($extension));
+        $filename = $createWeatherFileCommand->execute($extension);
+        return $this->file($filename);
     }
 }

@@ -13,8 +13,8 @@ parameters:
     windSpeed: Wind speed
   xml_template:
     date: Date
-    temperature: Temperature
     windSpeed: Wind_speed
+    temperature: Temperature
     windDirection: Wind_direction
   # export directory
   files_directory: var/files
