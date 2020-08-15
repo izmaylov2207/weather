@@ -1,0 +1,23 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  App\controller\:
+    resource: '../src/controller'
+
+  App\service\:
+    resource: '../src/service'
+
+  App\factory\:
+    resource: '../src/factory'
+
+  App\command\:
+    resource: '../src/command'
+
+  App\service\ForecastWeatherService:
+    bind:
+      $apiKey: '%yandex_api_key%'
+      $lang: '%yandex_api_lang%'
+
+  GuzzleHttp\Client:

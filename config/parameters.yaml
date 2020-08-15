@@ -1,0 +1,20 @@
+parameters:
+  # yandex api params
+  yandex_api_lang: ru_RU # response language
+  yandex_api_key: beb57345-f77f-4e64-847a-036de74b449d # api key
+  # current city coordinates
+  current_city_lat: 44.616687 # latitude of Sevastopol
+  current_city_log: 33.525432 # longitude of Sevastopol
+  # export templates
+  json_template:
+    date: Date
+    temperature: Temperature
+    windDirection: Wind direction
+    windSpeed: Wind speed
+  xml_template:
+    date: Date
+    temperature: Temperature
+    windSpeed: Wind_speed
+    windDirection: Wind_direction
+  # export directory
+  files_directory: var/files
